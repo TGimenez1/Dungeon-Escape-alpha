@@ -2,28 +2,28 @@
 public class Player {
     private final String name;
     private int hp;
+    private final int MAX_HP = 100;
 
     public Player(String name) {
         this.name = name;
-        this.hp = 100;
+        this.hp = MAX_HP;
     }
 
     public void greet() {
-        System.out.println("Bonjour, je suis "
-    + name + " !");
+        System.out.println("Bonjour, je suis " + name + " !");
         }
 
     public void takeDamage(int amount) {
-        this.hp = this.hp - amount;
-        if (this.hp < 0) {
-            this.hp = 0;
-        }
-        System.out.println(name + " a "
-    + hp + " points de vie !");
+        hp = Math.max(hp - amount, 0);
+        System.out.println(name + " a " + hp + " points de vie !");
     }
 
     public boolean isAlive() {
-        return hp > 0;
+        return this.hp > 0;
+    }
+
+    public int getHp() {
+        return this.hp;
     }
 
     public static void main(String[] args) {
