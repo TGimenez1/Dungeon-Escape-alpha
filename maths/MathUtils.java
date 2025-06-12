@@ -2,7 +2,7 @@ package Dungeon_Escape.maths;
 
 public class MathUtils {
     
-    public int pgcd(int a, int b) {
+    public static int pgcd(int a, int b) {
         while (b != 0) {
             int tmp = b;
             b = a % b;
